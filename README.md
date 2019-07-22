@@ -127,16 +127,6 @@ The subdirectory __bootstrap_ext__ contains
 }
 ```
 The other scss files that are present are
-* _colors.scss : Contains the variables for colors. For example,
-```
-  $color-primary: #0052CC;
-```
-It also contains the classes that use these variables. For example,
-```
-.primary {
-    color: $color-primary;
-}
-```
 * _fonts.scss : Contains the classes for fontsizes and fontweights. For example,
 ```
 .fs-10 {
@@ -149,4 +139,4 @@ It also contains the classes that use these variables. For example,
     padding: 10px;
 }
 ```
-* global.scss : This imports all the above mentioned SCSS files. 
+* global.scss : This imports all the above mentioned SCSS files.
