@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'charlie_textlight';
+  src:
+    url('../assets/fonts/charlie/charlie_text-light-webfont.woff2') format('woff2'),
+    url('../assets/fonts/charlie/charlie_text-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'charlie_textregular';
+  src:
+    url('../assets/fonts/charlie/charlie_text-regular-webfont.woff2') format('woff2'),
+    url('../assets/fonts/charlie/charlie_text-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'charlie_textsemibold';
+  src:
+    url('../assets/fonts/charlie/charlie_text-semibold-webfont.woff2') format('woff2'),
+    url('../assets/fonts/charlie/charlie_text-semibold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-light {
+  font-family: 'charlie_textlight', sans-serif;
+}
+
+.font-regular {
+  font-family: 'charlie_textregular', sans-serif;
+}
+
+.font-semibold {
+  font-family: 'charlie_textsemibold', sans-serif;
+}
+
+.fs-12 {
+  font-size: 0.75rem;
+}
+
+.fs-14 {
+  font-size: 0.875rem;
+}

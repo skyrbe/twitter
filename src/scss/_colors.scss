@@ -1,0 +1,279 @@
+$color-primary: #0052cc;
+$light-gray: #dbd9d8;
+$dark-gray: #616162;
+$faint-gray: #f3f4f5;
+$orange: #ef6c00;
+$background-gray: #f7f7f7;
+$color-label: #151515;
+$gray-20: #b1b1b1;
+$sky-blue: #7bb0c79e;
+$primary-blue: #2e8dbd;
+$hot-pink: #F24060;
+$chrome-yellow: #fecc00;
+$smokey-grey: #59595b;
+$link-blue: #2c89b9;
+
+.color-banner {
+  color: #4c4c4c;
+}
+
+.primary {
+  color: $color-primary;
+}
+
+.bg-primary {
+  background-color: $color-primary;
+}
+
+.primary-blue {
+  color: $primary-blue;
+}
+
+.hot-pink {
+  color: $hot-pink;
+}
+
+.bg-chrome-yellow {
+  background-color: $chrome-yellow;
+}
+
+.bg-light-gray {
+  background-color: $background-gray;
+}
+
+.bg-deep-blue {
+  background-color: #517085;
+}
+
+.bg-sky-blue {
+  background-color: $sky-blue;
+}
+
+.bg-orange {
+  background: $orange;
+}
+.clr-orange-font {
+  color: $orange;
+}
+
+.bg-grey {
+  background-color: #efefef !important;
+}
+
+.bg-dark-grey {
+  background-color: #68696b;
+}
+
+.bg-footer-grey {
+  background-color: #595a5c;
+}
+
+.bg-transparent {
+  background: transparent;
+}
+
+.bg-clr-gray-20 {
+  background-color: $gray-20;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+.bg-transparent {
+  background-color: #ff000000;
+}
+
+.border-primary {
+  border-color: $color-primary;
+}
+.border-orange {
+  border-color: $orange !important;
+}
+.clr-dark-grey {
+  color: #616162;
+}
+.clr-deep-orange {
+  color: #ef6c00;
+}
+.clr-light-orange {
+  color: #fbcb00;
+}
+.clr-orange {
+  color: $orange;
+}
+.clr-medium-grey {
+  color: #808184;
+}
+.clr-deep-blue {
+  color: #517085;
+}
+.clr-lite-blue {
+  color: #387DB9;
+}
+.color-dark-grey {
+  color: #595a5c;
+}
+.clr-gray-20 {
+  color: $gray-20;
+}
+.clr-white {
+  color: #ffffff;
+}
+
+.clr-black {
+  color: #000000;
+}
+
+.clr-hr {
+  color: #dbd9d8;
+}
+
+.clr-lite-grey {
+  color: #dbd9d8;
+}
+.border-color-white {
+  border-color: white;
+}
+
+.clr-red {
+  color: red;
+}
+
+.clr-cadet-blue {
+  color: cadetblue;
+}
+
+.clr-sky-blue {
+  color: skyblue;
+}
+
+.clr-very-light-grey {
+  color: #f7f7f7;
+}
+.clr-very-dark-grayish-blue {
+  color: #595a5d;
+}
+.clr-facebook {
+  color:#3b5998;
+}
+.clr-twitter {
+  color:#38A1F3;
+}
+.clr-link-blue{
+  color: $link-blue;
+}
+.border-color-light-gr {
+  border-color: #dbd9d8 !important;
+}
+
+.border-right-light-grey {
+  border-right: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.background-white {
+  background-color: #fff !important;
+}
+
+.background-light-gr {
+  background-color: #f2f2f2;
+}
+
+.border-1-gray {
+  border: 1px solid #dbd9d8;
+}
+
+.border-1-white {
+  border: 1px solid #ffffff !important;
+}
+
+.border-right-1-gray {
+  border-right: 1px solid #dbd9d8;
+}
+
+.border-bottom-1-gray {
+  border-bottom: 1px solid #dbd9d8;
+}
+
+.border-bottom-light-grey {
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.cardShadowOpacity {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.box_shadow_top_clr_gray {
+  box-shadow: inset 0px 49px 51px -12px rgba(0, 0, 0, 0.48);
+}
+
+.box_shadow_bottom_clr_gray {
+  box-shadow: inset 0px -49px 51px -12px rgba(0, 0, 0, 0.48);
+}
+
+.bg_eee {
+  background-color: #eee;
+}
+
+.RowOddBg_eee:nth-child(odd) {
+  background: #eee;
+}
+
+.bgActive {
+  background: #536b86 !important;
+  color: white;
+  z-index: 2;
+}
+
+.bgTrending {
+  background: #fbfbfb;
+}
+
+.color-label {
+  color: $color-label;
+}
+//colors accroding to new UI
+
+.bg_light_grey {
+  background-color: #f4f5f7;
+}
+.bg_grey {
+  background-color: #68696b;
+}
+.bgDarkGray {
+  background: #ececec;
+}
+
+.bgLightGray {
+  background: #f8f8f8;
+}
+
+.bgGrayish {
+  background: #f9f9f9;
+}
+
+.bgMediumGray {
+  background: #f4f4f4;
+}
+.clr-lite-grey-2 {
+  color: #a8a8aa;
+}
+a:hover {
+    color: $orange;
+    text-decoration: none;
+  }
+.bg_skills {
+  background-color: #f3f4f5;
+}
+.bg-smokey-grey, .bg-smokey-grey:first-child {
+  background-color: $smokey-grey;
+}
+.bg_light_blue{
+  background-color: #3090C7;
+}
+.clr-dark-gray{
+  color: #68696b !important;
+}
+
+.bg-grey-blue{
+  background-color: #546c87;
+}

@@ -1,0 +1,30 @@
+.tweet {
+  composes: card mb-4 background-white px-3 pt-3 pb-0 from '../../scss/global.css';
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 0; }
+
+.content {
+  composes: mt-2 fs-14 mb-0 from '../../scss/global.css'; }
+
+.author {
+  composes: lh-1 font-semibold from '../../scss/global.css'; }
+
+.postedTime {
+  composes: d-flex align-items-center fs-12 lh-1 ml-1 from '../../scss/global.css'; }
+  .postedTime::before {
+    content: '';
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #888;
+    margin-right: 5px; }
+
+.actionsContainer {
+  composes: mt-2 from '../../scss/global.css';
+  border-top: 1px dashed #eee; }
+
+.edit {
+  composes: fs-14 cursor-pointer d-inline-block py-3 mr-2 from '../../scss/global.css'; }
+
+.delete {
+  composes: fs-14 cursor-pointer d-inline-block py-3 mr-2 from '../../scss/global.css'; }

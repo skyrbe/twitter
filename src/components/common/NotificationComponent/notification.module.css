@@ -1,0 +1,43 @@
+.toast {
+  composes: position-absolute m-auto mt-0 mb-10 d-flex border-0 justify-content-space-between align-items-center clr-white from '../../../scss/global.css';
+  bottom: 20px;
+  right: 20px;
+  width: 330px;
+  min-height: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) !important; }
+
+.successToast,
+.failureToast {
+  composes: alert fs-14 from '../../../scss/global.css';
+  composes: toast; }
+
+.successToast {
+  composes: alert-success from '../../../scss/global.css';
+  background-color: #00b898 !important; }
+
+.failureToast {
+  composes: alert-danger from '../../../scss/global.css';
+  background-color: #ee5a5c !important; }
+
+.notificationContainer {
+  composes: position-fixed mt-0 from '../../../scss/global.css';
+  bottom: 5px;
+  z-index: 999999;
+  width: 330px;
+  right: 0; }
+
+.notification .title {
+  font-size: 1em;
+  line-height: 1.2em;
+  font-weight: bold;
+  margin: 0 0 5px 0; }
+
+.notification:hover,
+.notification:focus {
+  opacity: 1; }
+
+.closeButton {
+  composes: btn bg-white px-2 justify-content-center align-items-center d-flex from '../../../scss/global.css';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%; }
