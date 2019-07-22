@@ -23,7 +23,10 @@ class Signup extends Component {
 
   render() {
     return (
-      <div className="d-flex align-items-center justify-content-center fw fh">
+      <div className="d-flex align-items-center justify-content-center fw fh flex-column">
+        <h3 className="mb-4">
+          Register on Twittter
+        </h3>
         <form onSubmit={this.handleSubmit} className={`p-5 max-width-400 card ${styles.signupContainer}`}>
           <Input
             type="text"
@@ -47,7 +50,7 @@ class Signup extends Component {
             value={this.state.password}
           />
           <button type="submit" className="btn btn-primary mt-3">Submit</button>
-          <Link to="/" className="m-auto">
+          <Link to="/" className="mt-2 mx-auto">
             Login
           </Link>
         </form>
