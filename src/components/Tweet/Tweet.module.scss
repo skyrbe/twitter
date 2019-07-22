@@ -6,6 +6,7 @@
 
 .content {
   composes: mt-2 fs-14 mb-0 from '../../scss/global.css';
+  color: inherit;
 }
 
 .author {

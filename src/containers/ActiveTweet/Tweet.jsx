@@ -48,7 +48,7 @@ const ActiveTweet = (props) => {
 function mapStateToProps({ tweets, auth }) {
   return {
     tweet: tweets.activeTweet,
-    loggedInUser: auth.loggedInUser.username
+    loggedInUser: auth.loggedInUser && auth.loggedInUser.username
   };
 }
 
