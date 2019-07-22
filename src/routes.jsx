@@ -5,6 +5,7 @@ import {
 import { createBrowserHistory } from 'history';
 import PageLoader from '@components/common/PageLoader';
 import Notification from '@containers/common/Notification';
+import Header from '@containers/common/Header';
 import store from './store';
 
 const history = createBrowserHistory();
@@ -36,6 +37,7 @@ export default (
     <Router history={history}>
       <div className="container-fluid p-0 fvh fvw">
         <Notification />
+        <Header />
         <Switch>
           <Route exact path="/" component={Login} />
           <Route exact path="/register" component={Signup} />

@@ -1,5 +1,5 @@
 .tweet {
-  composes: card mb-4 background-white px-3 pt-3 pb-0 from '../../scss/global.css';
+  composes: card mb-4 background-white px-3 pt-3 pb-2 from '../../scss/global.css';
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: 0;
 }
@@ -31,9 +31,9 @@
 }
 
 .edit {
-  composes: fs-14 cursor-pointer d-inline-block py-3 mr-2 from '../../scss/global.css';
+  composes: fs-14 cursor-pointer d-inline-block pt-3 mr-2 from '../../scss/global.css';
 }
 
 .delete {
-  composes: fs-14 cursor-pointer d-inline-block py-3 mr-2 from '../../scss/global.css';
+  composes: fs-14 cursor-pointer d-inline-block pt-3 mr-2 from '../../scss/global.css';
 }

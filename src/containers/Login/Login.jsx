@@ -7,12 +7,20 @@ import { setNotificationMessage } from '@reducers/notification';
 
 const Login = (props) => {
   const handleSubmit = (data) => {
-    const usernameExists = props.users.some(item => item.username === data.username);
-    if (usernameExists) {
-      props.loginUser(data);
+    const user = props.users.find(item => item.username === data.username);
+    if (user) {
+      if (user.password === data.password) {
+        props.loginUser(data);
+        props.history.push(`/${data.username}`);
+      } else {
+        props.setNotificationMessage({
+          message: 'Invalid Password',
+          type: 'danger',
+        });
+      }
     } else {
       props.setNotificationMessage({
-        message: 'Hi',
+        message: 'User Doesn\'t Exist',
         type: 'danger',
       });
     }

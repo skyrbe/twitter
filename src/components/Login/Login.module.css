@@ -1,0 +1,8 @@
+.loginContainer {
+  border: 0;
+  width: 90%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+
+.loginContainer:hover {
+  transition: box-shadow ease 0.25s;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); }

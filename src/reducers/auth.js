@@ -1,11 +1,9 @@
 export const LOGIN_USER = 'auth/LOGIN_USER';
+export const LOGOUT_USER = 'auth/LOGOUT_USER';
 export const SIGNUP_USER = 'auth/SIGNUP_USER';
 
 const initialState = {
-  loggedInUser: {
-    firstname: 'Harsha',
-    username: 'asdf'
-  },
+  loggedInUser: null,
   users: []
 };
 
@@ -21,6 +19,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         users: state.users.concat(action.payload)
+      };
+    }
+    case LOGOUT_USER: {
+      return {
+        ...state,
+        loggedInUser: null
       };
     }
     default:
@@ -45,8 +49,14 @@ export const signupUser = (data) => {
       type: LOGIN_USER,
       payload: {
         username: data.username,
-        password: data.password
+        firstname: data.firstname
       }
     });
+  };
+};
+
+export const logoutUser = () => {
+  return {
+    type: LOGOUT_USER
   };
 };

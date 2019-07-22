@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Input from '@components/common/FormElements/Input';
+import styles from './Login.module.css';
 
 class Login extends Component {
   state = {
@@ -22,7 +23,7 @@ class Login extends Component {
   render() {
     return (
       <div className="d-flex align-items-center justify-content-center fw fh">
-        <form onSubmit={this.handleSubmit} className="p-5 max-width-400 card">
+        <form onSubmit={this.handleSubmit} className={`p-5 max-width-400 card ${styles.loginContainer}`}>
           <Input
             type="text"
             label="username"
@@ -37,8 +38,8 @@ class Login extends Component {
             onChange={this.handleChange}
             value={this.state.password}
           />
-          <button type="submit" className="btn btn-primary">Login</button>
-          <Link to="/register">
+          <button type="submit" className="btn btn-primary mt-3">Login</button>
+          <Link to="/register" className="m-auto">
             Register
           </Link>
         </form>
