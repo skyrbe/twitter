@@ -1,68 +1,152 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# twitter ![CI status](https://img.shields.io/badge/build-passing-brightgreen.svg)
 
-## Available Scripts
+Hi reviewer, welcome! :tada:
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+### Requirements
+* Linux/Mac/Windows/
+* node 10+ (preferably yarn)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+git clone https://github.com/skyrbe/twitter.git
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+cd twitter
 
-### `npm test`
+yarn install
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Running the development server
+```
+yarn start
+```
 
-### `npm run build`
+## Tooling and packages used - The important ones.
+### Tools
+* webpack : For the run and build process.
+* babel : ES6 to ES5 transpiler
+* eslint : Used to prevent bad JS code from being written.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Packages
+* css-modules : Enforces better CSS writing practices
+* bootstrap4 : The latest and the greatest, yet.
+* redux : Data layer
+* react-redux : Connects the React Views with Redux Data
+* react-router : Navigation
+* redux-thunk : dispatch functions instead of plain actions. Useful for async actions.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Modules Explained
+The React bit of the project is broken down in the following way.
+```
+    |-- config (contains the scripts that are responsible for configuring webpack. Do not modify unless you want to add a webpack plugin or a config utility)
+    |-- public
+        |-- index.html (Do not modify unless you need to add a link to google fonts or 3rd party scripts)
+    |-- scripts (contains scripts responsible for building/running the application. Do not modify)
+    |-- README.md (The file you are reading right now!)
+    |-- package.json (All dependencies go here, so do the build scripts execution)
+    |-- src
+        |-- assets
+            |-- fonts (Fonts and Custom fonts like budicons generated fonts go here)
+            |-- images (You know the drill)
+        |-- components
+            |--common
+               |--Header
+               |--formElements
+                  |--Input
+                     |--index.jsx (Contains the JSX for just the TextField and the custom styles applied to it)
+            |--..
+        |-- containers
+            |-- Login
+                |-- Login.jsx
+                |-- index.jsx(The only purpose is to export out the main file)
+                |--Login.module.scss(It's important to name your scss files following the pattern fileName.module.scss )
+                |--Login.module.css (This is auto generated)
+            |--..
+        |-- include
+            |-- bootstrap.js (imports the global css files, bootstrap JS and it's dependencies)
+            |-- ..
+        |-- reducers
+            |-- middleware
+                |-- clientMiddleware.js (This file is the middleman between the API requests and dispatch. Do not modify)
+            |-- index.js (combines all the reducers)
+            |-- *.js
+        |-- scss
+            |-- bootstrap
+            |-- bootstrap_ext
+            |-- _colors.scss
+            |-- _fonts.scss
+            |-- _utils.scss
+            |-- global.scss
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
 
-### `npm run eject`
+### containers
+This is the outermost parent that needs to access the data layer (redux store). It uses ```connect``` from ```react-redux``` to let ```react``` access the ```store```.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### components
+This is usually a dumb component that receives the data from a container.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### reducers
+This boilerplate combines the actions and reducers into file, instead of two separate ones. This gives us the ability to write the reducer level constants in the same file without having to export the same.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### SCSS
+This is the directory where are global styles are declared, bootstrap 4 is imported etc.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The subdirectory __bootstrap__ contains
+* _config.scss - This is the file where any bootstrap4 theme level customization options should be put. For example,
+```
+$theme-colors: (
+  "primary": #0052CC,
+  "danger": #ff4136
+);
+```
+* bootstrap.scss - We have moved away from the usual way of including the entire bootstrap file and adopted scss based approach. This gives us the flexibility of including only the required modules. For example,
+```
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/images";
+```
 
-## Learn More
+The subdirectory __bootstrap_ext__ contains
+* _ext.scss - This is the file where you would include additional bootstrap configuration, such as styling the default ```.btn``` class. For example,
+```
+.btn {
+    $button-border-width: 2px;
+    border-width: $button-border-width;
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    &.btn-dark {
+      background-color: $black;
+      border-color: $black;
+      color: $white;
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+      &:hover {
+        background-color: $white;
+        color: $black;
+      }
+    }
+}
+```
+The other scss files that are present are
+* _colors.scss : Contains the variables for colors. For example,
+```
+  $color-primary: #0052CC;
+```
+It also contains the classes that use these variables. For example,
+```
+.primary {
+    color: $color-primary;
+}
+```
+* _fonts.scss : Contains the classes for fontsizes and fontweights. For example,
+```
+.fs-10 {
+    font-size: 0.625rem;
+}
+```
+* _utils.scss : Contains the classes for margins, paddings, line-heights etc. For example,
+```
+.p-10 {
+    padding: 10px;
+}
+```
+* global.scss : This imports all the above mentioned SCSS files. 
